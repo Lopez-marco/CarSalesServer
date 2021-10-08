@@ -52,6 +52,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(40000),
             allowNull: false
         },
+        enable: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
         owner: {
             type: DataTypes.INTEGER,
             allowNull: false

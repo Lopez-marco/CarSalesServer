@@ -20,6 +20,7 @@ router.post("/addveh", validateSession, (req, res) => {
         status: req.body.vehicle.status,
         views: req.body.vehicle.views,
         description: req.body.vehicle.description,
+        enable: req.body.vehicle.enable,
         owner: req.user.id,
     };
     Vehicle.create(addvehicle)
@@ -63,6 +64,7 @@ router.put("/editveh/:id", validateSession, function (req, res) {
         bodystyle: req.body.vehicle.bodystyle,
         status: req.body.vehicle.status,
         views: req.body.vehicle.views,
+        enable: req.body.vehicle.enable,
         description: req.body.vehicle.description,
     };
 
