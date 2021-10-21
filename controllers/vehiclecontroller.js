@@ -68,7 +68,7 @@ router.put("/editveh/:id", validateSession, function (req, res) {
         description: req.body.vehicle.description,
     };
 
-    const query = { where: { id: req.params.id, owner: req.user.id } };
+    const query = { where: { id: req.params.id } };
 
     Vehicle.update(editveh, query)
         .then((editvehicle) => res.status(200).json(editvehicle))
@@ -104,7 +104,7 @@ router.put("/editviews/:id", function (req, res) {
 //Delete//
 
 router.delete("/delveh/:id", validateSession, function (req, res) {
-    const query = { where: { id: req.params.id, owner: req.user.id } };
+    const query = { where: { id: req.params.id } };
 
     Vehicle.destroy(query)
         .then(() => res.status(200).json({ message: "Vehicle Removed" }))
